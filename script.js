@@ -1,16 +1,12 @@
 function firstWord(s) {
-  let result="";
-	for(let i=0;i<s.length;i++){
-		const char=s[i];
-		if(char==' '){
-			return result;
-		}
-		result+=char;
+  s=s.trimStart();
+	const firstSpace=s.indexOf(' ');
+	if(firstSpace==-1){
+		return s;
 	}
-	return result;
+	return s.slice(0,firstSpace);
 }
 
 // Do not change the code below
-
 const s = prompt("Enter String:");
 alert(firstWord(s));
